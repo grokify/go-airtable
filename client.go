@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/grokify/oauth2more"
+	"github.com/grokify/goauth"
 	"github.com/grokify/simplego/net/urlutil"
 )
 
@@ -33,8 +33,8 @@ func NewAirtableAPIClient(token, baseID, tableName string) *AirtableAPIClient {
 func (client *AirtableAPIClient) SetToken(token string) {
 	client.token = strings.TrimSpace(token)
 	if len(client.token) > 0 {
-		client.HTTPClient = oauth2more.NewClientAuthzTokenSimple(
-			oauth2more.Bearer.String(), client.token)
+		client.HTTPClient = goauth.NewClientAuthzTokenSimple(
+			goauth.Bearer.String(), client.token)
 	}
 }
 
