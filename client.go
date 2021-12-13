@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/grokify/goauth"
-	"github.com/grokify/simplego/net/urlutil"
+	"github.com/grokify/mogo/net/urlutil"
 )
 
 const AirtableAPIBaseURL = "https://api.airtable.com/v0/"
