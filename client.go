@@ -53,7 +53,7 @@ func (client *AirtableAPIClient) GetRecordID(opts *ListOpts) (string, error) {
 		return "", err
 	}
 	if len(recs.Records) != 1 {
-		return "", fmt.Errorf("Airtable API Client: Non-1 record returned [%d]", len(recs.Records))
+		return "", fmt.Errorf("airtable.AirtableAPIClient `GetRecordID()` non-1 record returned, records: [%d]", len(recs.Records))
 	}
 	return recs.Records[0].ID, nil
 }
@@ -99,7 +99,7 @@ func (client *AirtableAPIClient) listRecordsRaw(opts *ListOpts) (*http.Response,
 		}
 	}
 	if client.HTTPClient == nil {
-		return nil, errors.New("Airtable API Client Error: No HTTP Client Set")
+		return nil, errors.New("airtable API client error: no HTTP client set")
 	}
 	return client.HTTPClient.Get(apiURL)
 }
