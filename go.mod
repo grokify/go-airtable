@@ -4,5 +4,5 @@ go 1.16
 
 require (
 	github.com/grokify/goauth v0.16.6
-	github.com/grokify/mogo v0.41.6
+	github.com/grokify/mogo v0.41.10
 )
