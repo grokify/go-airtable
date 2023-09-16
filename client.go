@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/grokify/goauth"
+	"github.com/grokify/goauth/authutil"
 	"github.com/grokify/mogo/net/urlutil"
 )
 
@@ -33,8 +33,8 @@ func NewAirtableAPIClient(token, baseID, tableName string) *AirtableAPIClient {
 func (client *AirtableAPIClient) SetToken(token string) {
 	client.token = strings.TrimSpace(token)
 	if len(client.token) > 0 {
-		client.HTTPClient = goauth.NewClientAuthzTokenSimple(
-			goauth.Bearer.String(), client.token)
+		client.HTTPClient = authutil.NewClientAuthzTokenSimple(
+			authutil.Bearer.String(), client.token)
 	}
 }
 
