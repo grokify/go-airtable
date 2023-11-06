@@ -58,7 +58,7 @@ func (client *AirtableAPIClient) GetRecordID(opts *ListOpts) (string, error) {
 	return recs.Records[0].ID, nil
 }
 
-func (client *AirtableAPIClient) ListRecords(opts *ListOpts, res interface{}) ([]byte, *http.Response, error) {
+func (client *AirtableAPIClient) ListRecords(opts *ListOpts, res any) ([]byte, *http.Response, error) {
 	resp, err := client.listRecordsRaw(opts)
 	if err != nil {
 		return []byte(""), resp, err
