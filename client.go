@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -63,7 +63,7 @@ func (client *AirtableAPIClient) ListRecords(opts *ListOpts, res any) ([]byte, *
 	if err != nil {
 		return []byte(""), resp, err
 	}
-	bytes, err := ioutil.ReadAll(resp.Body)
+	bytes, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return bytes, resp, err
 	}
