@@ -6,7 +6,7 @@ go 1.21
 
 require (
 	github.com/grokify/goauth v0.20.5
-	github.com/grokify/mogo v0.61.0
+	github.com/grokify/mogo v0.61.1
 )
 
 require (
